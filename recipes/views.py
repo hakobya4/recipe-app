@@ -8,7 +8,6 @@ from .forms import RecipesSearchForm
 from .models import Recipes
 from .utils import get_chart
 from django.contrib.auth.decorators import login_required
-from IPython.display import HTML
 # Create your views here.
 
 

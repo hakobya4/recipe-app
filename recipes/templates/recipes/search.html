@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Search</title>
+    {% load static %}
+    <style type="text/css">
+      body {
+        background: url("{% static 'recipes/images/background.jpg' %}")
+          no-repeat fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        background-color: #f44336;
+        color: white;
+        margin: 1%;
+      "
+    >
+      <h1
+        style="
+          display: flex;
+          justify-content: space-between;
+          background-color: #f44336;
+          color: white;
+          margin: 1%;
+          padding: 20px;
+        "
+      >
+        Search Recipes
+      </h1>
+      <div style="padding: 20px">
+        <a
+          style="
+            max-height: 20px;
+            color: white;
+            text-decoration: none;
+            padding-right: 10px;
+          "
+          href="{%url 'recipes:list' %}"
+          >Back</a
+        >
+        <a
+          style="max-height: 20px; color: white; text-decoration: none"
+          href="{%url 'logout' %}"
+          >Logout</a
+        >
+      </div>
+    </div>
+    <form
+      style="
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        justify-content: space-between;
+        margin: auto;
+        max-width: 30%;
+        background-color: white;
+        padding: 2%;
+      "
+      action=""
+      method="POST"
+    >
+      {% csrf_token %} {{form}}
+
+      <button style="margin-top: 20px" type="submit">Search</button>
+    </form>
+    <div
+      style="
+        background-color: white;
+        margin-top: 20px;
+        display: flex;
+        padding: 20px;
+        justify-content: center;
+      "
+    >
+      {% if recipes_df %} {{recipes_df|safe}}
+      <br />
+      <div>
+        <img alt="{{chart}}" src="data:image/png;base64, {{chart|safe}}" />
+      </div>
+      {% else %}
+      <h3>no data</h3>
+      {% endif %}
+    </div>
+  </body>
+</html>

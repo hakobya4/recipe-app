@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipes Home</title>
+  {% load static %}
+  <script src="{% static 'recipes/home.js' %}" defer></script>
+</head>
+<html>
+  <body style="background-color: #f44336; color: white; width: 100%">
+    <div style="padding: 20px; text-align: end">
+      <a
+        style="
+          max-height: 20px;
+          color: white;
+          text-decoration: none;
+          padding-right: 10px;
+        "
+        href="{%url 'login' %}"
+      >
+        Login
+      </a>
+      <a
+        style="
+          max-height: 20px;
+          color: white;
+          text-decoration: none;
+          padding-right: 10px;
+        "
+        href="{%url 'recipes:about' %}"
+        >About Me</a
+      >
+    </div>
+    <h1 style="text-align: center">Welcome to Recipes</h1>
+
+    <img
+      src="{% static 'recipes/images/recipes.jpg' %}"
+      alt="home"
+      width="100%"
+    />
+    <p style="text-align: center">
+      Photo by
+      <a
+        href="https://unsplash.com/@mvdheuvel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+        >Maarten van den Heuvel</a
+      >
+      on
+      <a
+        href="https://unsplash.com/photos/person-slicing-green-vegetable-in-front-of-round-ceramic-plates-with-assorted-sliced-vegetables-during-daytime-EzH46XCDQRY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+        >Unsplash</a
+      >
+    </p>
+  </body>
+</html>

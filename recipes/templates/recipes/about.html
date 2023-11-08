@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details</title>
+    {% load static %}
+    <style type="text/css">
+      body {
+        background: url("{% static 'recipes/images/background.jpg' %}")
+          no-repeat fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <html>
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        background-color: #f44336;
+        color: white;
+        margin: 1%;
+      "
+    >
+      <h1 style="padding: 20px">About Me</h1>
+      <div style="padding: 20px">
+        <a
+          style="
+            max-height: 20px;
+            color: white;
+            text-decoration: none;
+            padding-right: 10px;
+          "
+          href="{%url 'recipes:home' %}"
+          >Home</a
+        >
+        <a
+          style="
+            max-height: 20px;
+            color: white;
+            text-decoration: none;
+            padding-right: 10px;
+          "
+          href="{%url 'login' %}"
+          >Login</a
+        >
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        padding-bottom: 20px;
+      "
+    >
+      <h1>About Me</h1>
+      <p>This page is about me. This is what I enjoy doing:</p>
+      <ul style="list-style: none">
+        <li>Frontend development</li>
+        <li>Legal Assistant</li>
+      </ul>
+
+      <a
+        style="
+          padding: 20px;
+          text-decoration: none;
+          color: rgb(255, 255, 255);
+          background: #f44336;
+          border-radius: 100px;
+        "
+        href="{% static 'recipes/files/Resume.pdf' %}"
+        class="button"
+        download
+      >
+        Download my CV
+      </a>
+
+      <h2>How I became a web developer</h2>
+      <p>Everything you need to know about my path:</p>
+      <ul style="list-style: none">
+        <li>
+          I started geting interested in web development from my older brother.
+          I did online courses, attempted to make my own project, but soon felt
+          stuck.
+        </li>
+        <li>
+          I joined career foundry so that I have the guidance and a pathway
+          forward in deepending my interest in web development
+        </li>
+      </ul>
+      <h2>Experiance</h2>
+      <div>
+        <table
+          border="1"
+          cellpadding="5"
+          cellspacing="5"
+          style="border-collapse: collapse; background-color: white"
+        >
+          <thead>
+            <tr>
+              <td>Skills</td>
+              <td>Level of Expertise</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML</td>
+              <td>Intermediate</td>
+            </tr>
+            <tr>
+              <td>CSS</td>
+              <td>Intermediate</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>Intermediate</td>
+            </tr>
+            <tr>
+              <td>Typescript</td>
+              <td>Beginner</td>
+            </tr>
+            <tr>
+              <td>SQL/NOSQL</td>
+              <td>Beginner</td>
+            </tr>
+            <tr>
+              <td>Angular</td>
+              <td>Beginner</td>
+            </tr>
+            <tr>
+              <td>React Js/ React Native</td>
+              <td>Beginner</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <footer style="text-align: center">
+      <p>Find me on</p>
+      <div class="social_media">
+        <a
+          rel="noopener"
+          href="https://www.github.com/hakobya4"
+          target="_blank"
+        >
+          <img
+            src="{% static 'recipes/images/github_icon.svg' %}"
+            alt="Github"
+          />
+        </a>
+        <a
+          rel="noopener"
+          href="https://www.linkedin.com/in/narek-hakobyan-716104175/"
+          target="_blank"
+        >
+          <img
+            src="{% static 'recipes/images/linkedin_icon.svg' %}"
+            alt="LinkedIn"
+          />
+        </a>
+      </div>
+      <a
+        href="#"
+        style="
+          position: sticky;
+          bottom: 20px;
+          margin-right: 10px;
+          text-align: center;
+          text-decoration: none;
+          margin-left: 80%;
+          padding: 10px;
+          font-family: sans-serif;
+          color: rgb(255, 255, 255);
+          background: #f44336;
+          border-radius: 100px;
+        "
+        >Back to top</a
+      >
+    </footer>
+  </html>
+</html>

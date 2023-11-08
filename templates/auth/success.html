@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success</title>
+    {% load static %}
+    <style>
+      body {
+        background: url("{% static 'recipes/images/background.jpg' %}")
+          no-repeat fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="width: 100%; text-align: center">
+      <h3 style="background-color: #f44336; color: white; padding: 14px 25px">
+        You’ve successfully logged out.
+      </h3>
+      <a
+        style="
+          background-color: #f44336;
+          color: white;
+          padding: 14px 25px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        "
+        href="{%url 'login' %}"
+        >Login Again</a
+      >
+    </div>
+  </body>
+</html>

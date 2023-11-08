@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe's list</title>
+    {% load static %}
+    <style type="text/css">
+      body {
+        background: url("{% static 'recipes/images/background.jpg' %}")
+          no-repeat fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <div
+    style="
+      display: flex;
+      justify-content: space-between;
+      background-color: #f44336;
+      color: white;
+      margin: 1%;
+    "
+  >
+    <h1 style="padding: 20px">Recipe's list</h1>
+    <div style="padding: 20px">
+      <a
+        style="
+          max-height: 20px;
+          color: white;
+          text-decoration: none;
+          padding-right: 10px;
+        "
+        href="{%url 'recipes:search' %}"
+        >Search</a
+      >
+      <a
+        style="max-height: 20px; color: white; text-decoration: none"
+        href="{%url 'logout' %}"
+        >Logout</a
+      >
+    </div>
+  </div>
+  <div
+    style="
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 0px 100px;
+      margin-right: 70px;
+    "
+  >
+    {% for object in object_list %}
+    <div>
+      <a
+        style="
+          background-color: #f44336;
+          color: white;
+          padding: 14px 25px;
+          width: 100%;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        "
+        href="{{object.get_absolute_url}}"
+        >{{object.name}}
+      </a>
+      <br />
+      <img alt="{{object.name}}" src="{{object.pic.url}}" width="100%" />
+      <br />
+    </div>
+    {% endfor %}
+  </div>
+</html>

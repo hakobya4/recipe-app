@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details</title>
+    {% load static %}
+    <style type="text/css">
+      body {
+        background: url("{% static 'recipes/images/background.jpg' %}")
+          no-repeat fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <html>
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        background-color: #f44336;
+        color: white;
+        margin: 1%;
+      "
+    >
+      <h1 style="padding: 20px">Recipe's Details</h1>
+      <div style="padding: 20px">
+        <a
+          style="
+            max-height: 20px;
+            color: white;
+            text-decoration: none;
+            padding-right: 10px;
+          "
+          href="{%url 'recipes:list' %}"
+          >Back</a
+        >
+        <a
+          style="max-height: 20px; color: white; text-decoration: none"
+          href="{%url 'logout' %}"
+          >Logout</a
+        >
+      </div>
+    </div>
+    <div style="margin-left: 30%; margin-right: 30%; display: inline-block">
+      <table
+        border="1"
+        cellpadding="5"
+        cellspacing="5"
+        style="
+          text-align: center;
+          border-collapse: collapse;
+          background-color: white;
+        "
+      >
+        <tr>
+          <td colspan="4" style="background-color: #f44336; color: #ffffff">
+            <h2>Details: {{object.name}}</h2>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Title: </b></td>
+          <td colspan="2">{{object.name}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Adapted: </b></td>
+          <td colspan="2">{{object.adapted}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Adapted Link: </b></td>
+          <td colspan="2">{{object.adapted_link}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Prep Time: </b> {{object.prepTime}}</td>
+          <td colspan="1"><b>Cooking Time:</b>{{object.cookTime}}</td>
+          <td colspan="1"><b>Total Time:</b>{{object.totalTime}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Serving: </b>{{object.serving}}</td>
+          <td colspan="2"><b>Difficulty: </b>{{object.difficulty}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Description</b></td>
+          <td colspan="2">{{object.description}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Ingredients: </b></td>
+          <td colspan="2">{{object.ingredients}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Direction</b></td>
+          <td colspan="2">{{object.direction}}<br /></td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <img alt="{{object.name}}" src="{{object.pic.url}}" width="100%" />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </html>
+</html>

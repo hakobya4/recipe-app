@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      body {
+        background: url("{% static 'recipes/images/background.jpg' %}")
+          no-repeat fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+</html>
+<body>
+  <div
+    style="
+      display: flex;
+      justify-content: space-between;
+      background-color: #f44336;
+      color: white;
+      margin: 1%;
+    "
+  >
+    <h1
+      style="
+        display: flex;
+        justify-content: space-between;
+        background-color: #f44336;
+        color: white;
+        margin: 1%;
+        padding: 20px;
+      "
+    >
+      Login
+    </h1>
+    <div style="padding: 20px">
+      <a
+        style="
+          max-height: 20px;
+          color: white;
+          text-decoration: none;
+          padding-right: 10px;
+        "
+        href="{%url 'recipes:home' %}"
+        >Home</a
+      >
+    </div>
+  </div>
+  <div style="height: 50%; align-content: space-evenly">
+    {% if error_message %} {{error_message}} {% endif %}
+    <form
+      style="
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        justify-content: space-between;
+        margin: auto;
+        max-width: 30%;
+        background-color: white;
+        padding: 2%;
+      "
+      action=""
+      method="POST"
+    >
+      {% csrf_token %} {{form}}
+
+      <button style="margin-top: 20px" type="submit">Login</button>
+    </form>
+  </div>
+</body>
